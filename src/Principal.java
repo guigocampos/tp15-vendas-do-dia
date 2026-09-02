@@ -2,10 +2,18 @@ import java.util.Scanner;
 
 public class Principal {
 
+    static final int CAPACIDADE = 50;
+
+    static String[] nomeVendedor = new String[CAPACIDADE];
+    static double[] valorVenda = new double[CAPACIDADE];
+    static String[] formaPagamento = new String[CAPACIDADE];
+
+    static int totalVendas = 0;
+
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
-        int opcao;
+        int opcao = -1;
 
         do {
             try{
@@ -13,36 +21,45 @@ public class Principal {
             exibirMenu();
 
             opcao = scan.nextInt();
+            scan.nextLine();
 
             switch (opcao) {
 
                 case 1:
-                    System.out.println("\nRegistrar venda");
+                    registrarVenda(scan); // Dev 1
                     break;
 
                 case 2:
-                    System.out.println("\nListar vendas");
+                    listarVendas(); // Dev 1
                     break;
 
                 case 3:
-                    System.out.println("\nRelatorio");
+                    relatorioComissoes(); 
+                    break;
+
+                case 4:
+                    relatorioResumoDia();
+                    break;
+
+                case 5:
+                    melhorVendedor(); 
                     break;
 
                 case 0:
-                    System.out.println("\nEncerrando...");
+                    System.out.println("Encerrando o sistema...");
                     break;
 
                 default:
-                    System.out.println("\nOpcao invalida!");
+                    System.out.println("Opcao invalida!");
             }
+
         }
         catch (Exception e) {
-                System.out.println("Entrada invalida! Por favor, digite um numero.");
-                scan.next();
-                opcao = -1;
+            System.out.println("Erro, digite a entrada corretamente!");
+            scan.nextLine();
         }
         exibirRodape();
-        
+
         } while (opcao != 0);
 
         scan.close();
@@ -51,18 +68,63 @@ public class Principal {
     public static void exibirCabecalho() {
         System.out.println("==============================");
         System.out.println("        VENDAS DO DIA");
-        System.out.println("==============================\n");
+        System.out.println("==============================");
     }
 
     public static void exibirMenu() {
         System.out.println("1 - Registrar venda");
         System.out.println("2 - Listar vendas");
-        System.out.println("3 - Relatorio");
+        System.out.println("3 - Relatorio de comissoes");
+        System.out.println("4 - Resumo do dia");
+        System.out.println("5 - Melhor vendedor");
         System.out.println("0 - Sair");
         System.out.print("Escolha: ");
     }
 
     public static void exibirRodape() {
-        System.out.println("==============================\n");
+        System.out.println("==============================");
+    }
+
+
+    //Dev 1
+
+    public static void registrarVenda(Scanner scan) {
+
+    }
+
+    public static void listarVendas() {
+
+    }
+
+    // Dev 2
+
+    public static double calcularTotalVendedor(String vendedor) {
+        return 0;
+    }
+
+    public static double calcularComissao(double totalVendido) {
+        return 0;
+    }
+
+    public static void relatorioComissoes() {
+
+    }
+
+    // Dev 3
+
+    public static double calcularTotalDia() {
+        return 0;
+    }
+
+    public static double calcularTicketMedio() {
+        return 0;
+    }
+
+    public static void relatorioResumoDia() {
+
+    }
+
+    public static void melhorVendedor() {
+
     }
 }
