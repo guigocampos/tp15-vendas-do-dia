@@ -113,7 +113,12 @@ public class Principal {
     // Dev 3
 
     public static double calcularTotalDia() {
-        return 0;
+        double total = 0;
+        
+        for (int i = 0; i < totalVendas; i++) {
+            total += valorVenda[i];
+        }
+        return total;
     }
 
     public static double calcularTicketMedio() {
