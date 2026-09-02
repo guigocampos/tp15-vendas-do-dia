@@ -22,7 +22,11 @@ O programa permite cadastrar vendas, listar as vendas registradas e gerar um rel
 
 - Desenvolvedor B: Livia Gabrieli de Albuquerque Guedes
   - GitHub: @liviadealbuquerque
-  - Função: Cálculo de totais por vendedor, cálculo da comissão, ticket médio e identificação do melhor vendedor.
+  - Função: Cálculo de totais por vendedor, cálculo da comissão e relatório de comissões.
+
+- Desenvolvedor C : Cicera Thais Izidio de Amorim Freitas
+  - GitHub: @SlayCT
+  - Função: Calcular total do dia, calcular ticket médio, resumo do dia e identificar o melhor vendedor.
 
 ## Enunciado
 
