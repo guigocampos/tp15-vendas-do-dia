@@ -114,7 +114,7 @@ public class Principal {
 
     public static double calcularTotalDia() {
         double total = 0;
-        
+
         for (int i = 0; i < totalVendas; i++) {
             total += valorVenda[i];
         }
@@ -122,7 +122,10 @@ public class Principal {
     }
 
     public static double calcularTicketMedio() {
-        return 0;
+        if (totalVendas == 0) {
+            return 0;
+        }
+        return calcularTotalDia() / totalVendas;
     }
 
     public static void relatorioResumoDia() {
