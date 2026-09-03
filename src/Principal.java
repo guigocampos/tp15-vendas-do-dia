@@ -92,7 +92,7 @@ public class Principal {
         for(int i = 0; i < CAPACIDADE; i++){
             if(totalVendas < CAPACIDADE){
                 System.out.print("Digite o nome do vendedor: ");
-                nomeVendedor[totalVendas] = scan.nextLine();
+                nomeVendedor[totalVendas] = scan.nextLine().trim();
                 if(nomeVendedor[totalVendas].isEmpty()){
                     System.out.println("Erro: nome vazio!");
                     return;
@@ -106,13 +106,15 @@ public class Principal {
                 scan.nextLine();
 
                 System.out.print("\nDigite a forma de pagamento (dinheiro, cartao, pix): ");
-                formaPagamento[totalVendas] = scan.nextLine();
+                formaPagamento[totalVendas] = scan.nextLine().trim();
+                System.out.println("DEBUG: [" + formaPagamento[totalVendas] + "]");
                 if(formaPagamento[totalVendas].isEmpty()){
                     System.out.println("Erro: forma de pagamento vazia!");
                     return;
                 }
                 else if (!formaPagamento[totalVendas].equalsIgnoreCase("dinheiro")
                         && !formaPagamento[totalVendas].equalsIgnoreCase("cartao")
+                        && !formaPagamento[totalVendas].equalsIgnoreCase("cartão")
                         && !formaPagamento[totalVendas].equalsIgnoreCase("pix")) {
                     System.out.println("Erro: forma de pagamento invalida!");
                     return;
