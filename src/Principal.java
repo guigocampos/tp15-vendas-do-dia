@@ -82,7 +82,9 @@ public class Principal {
     }
 
     public static void exibirRodape() {
-        System.out.println("==============================");
+        System.out.println("\n==============================");
+        System.out.println("Obrigado por utilizar o sistema!");
+        System.out.println("==============================\n");
     }
 
 
