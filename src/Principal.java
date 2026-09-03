@@ -118,14 +118,15 @@ public class Principal {
     public static void relatorioComissoes() {
         if (totalVendas == 0) {
             System.out.println("Nenhuma venda registrada ainda.");
-            return;
+        return;
     }
 
     System.out.println("\n--- Relatorio de comissoes ---");
-    for (int i=0; i < totalVendas; i++) {
+    System.out.printf("%-15s %15s %15s%n", "Vendedor", "Total vendido", "Comissao");
+    for (int i = 0; i < totalVendas; i++) {
         double total = calcularTotalVendedor(nomeVendedor[i]);
         double comissao = calcularComissao(total);
-        System.out.printf("%s - Total vendido: R$ %.2f - Comissao: R$ %.2f%n",
+        System.out.printf("%-15s R$ %12.2f R$ %12.2f%n",
                 nomeVendedor[i], total, comissao);
     }
 }
