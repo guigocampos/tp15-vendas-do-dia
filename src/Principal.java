@@ -129,8 +129,12 @@ public class Principal {
     }
 
     public static void relatorioResumoDia() {
-
-    }
+    System.out.println("\n===== RESUMO DO DIA =====");
+    System.out.printf("Total vendido: R$ %.2f%n", calcularTotalDia());
+    System.out.println("Quantidade de vendas: " + totalVendas);
+    System.out.printf("Ticket medio: R$ %.2f%n", calcularTicketMedio());
+    System.out.println("=========================");
+}
 
     public static void melhorVendedor() {
 
