@@ -89,48 +89,49 @@ public class Principal {
     //Dev 1
 
     public static void registrarVenda(Scanner scan) {
-        for(int i = 0; i < CAPACIDADE; i++){
-            if(totalVendas < CAPACIDADE){
-                System.out.print("Digite o nome do vendedor: ");
-                nomeVendedor[totalVendas] = scan.nextLine().trim();
-                if(nomeVendedor[totalVendas].isEmpty()){
-                    System.out.println("Erro: nome vazio!");
-                    return;
-                }
-                System.out.print("Digite o valor da venda: ");
-                valorVenda[totalVendas] = scan.nextDouble();
-                if(valorVenda[totalVendas] <= 0){
-                    System.out.println("Erro: valor da venda deve ser maior que zero!");
-                    return;
-                }
-                scan.nextLine();
-
-                System.out.print("\nDigite a forma de pagamento (dinheiro, cartao, pix): ");
-                formaPagamento[totalVendas] = scan.nextLine().trim();
-                System.out.println("DEBUG: [" + formaPagamento[totalVendas] + "]");
-                if(formaPagamento[totalVendas].isEmpty()){
-                    System.out.println("Erro: forma de pagamento vazia!");
-                    return;
-                }
-                else if (!formaPagamento[totalVendas].equalsIgnoreCase("dinheiro")
-                        && !formaPagamento[totalVendas].equalsIgnoreCase("cartao")
-                        && !formaPagamento[totalVendas].equalsIgnoreCase("cartão")
-                        && !formaPagamento[totalVendas].equalsIgnoreCase("pix")) {
-                    System.out.println("Erro: forma de pagamento invalida!");
-                    return;
-                }
-
-                totalVendas++;
-                System.out.println("\nVenda registrada com sucesso!");
-                break;
-            } else {
-                System.out.println("Capacidade máxima de vendas atingida!");
+        if(totalVendas < CAPACIDADE){
+            System.out.print("Digite o nome do vendedor: ");
+            nomeVendedor[totalVendas] = scan.nextLine().trim();
+            if(nomeVendedor[totalVendas].isEmpty()){
+                System.out.println("Erro: nome vazio!\n");
+                return;
             }
+            System.out.print("Digite o valor da venda: ");
+            valorVenda[totalVendas] = scan.nextDouble();
+            if(valorVenda[totalVendas] <= 0){
+                System.out.println("Erro: valor da venda deve ser maior que zero!\n");
+                return;
+            }
+            scan.nextLine();
+
+            System.out.print("Digite a forma de pagamento (dinheiro, cartao, pix): ");
+            formaPagamento[totalVendas] = scan.nextLine().trim();
+            if(formaPagamento[totalVendas].isEmpty()){
+                System.out.println("Erro: forma de pagamento vazia!\n");
+                return;
+            }
+            else if (!formaPagamento[totalVendas].equalsIgnoreCase("dinheiro")
+                    && !formaPagamento[totalVendas].equalsIgnoreCase("cartao")
+                    && !formaPagamento[totalVendas].equalsIgnoreCase("cartão")
+                    && !formaPagamento[totalVendas].equalsIgnoreCase("pix")) {
+                System.out.println("Erro: forma de pagamento invalida!\n");
+                return;
+            }
+
+            totalVendas++;
+            System.out.println("\nVenda registrada com sucesso!");
+        } else {
+            System.out.println("Capacidade máxima de vendas atingida!\n");
         }
     }
 
     public static void listarVendas() {
-        
+        for(int i = 0; i < totalVendas; i++){
+            System.out.println("\nVenda " + (i + 1) + ":");
+            System.out.println("Vendedor: " + nomeVendedor[i]);
+            System.out.println("Valor: R$" + valorVenda[i]);
+            System.out.println("Forma de pagamento: " + formaPagamento[i] + "\n");
+        }
     }
 
     // Dev 2
