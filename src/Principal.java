@@ -163,7 +163,7 @@ public class Principal {
         return;
     }
 
-    System.out.println("\n--- Relatorio de comissoes ---");
+    System.out.println("\n--- Relatorio de comissoes do dia ---");
     System.out.printf("%-15s %15s %15s%n", "Vendedor", "Total vendido", "Comissao");
     for (int i = 0; i < totalVendas; i++) {
         double total = calcularTotalVendedor(nomeVendedor[i]);
