@@ -159,6 +159,26 @@ public class Principal {
 }
 
     public static void melhorVendedor() {
+        if (totalVendas == 0) {
+            System.out.println("Nenhuma venda registrada ainda.");
+            return;
+        }
 
+        String vendedorMelhor = nomeVendedor[0];
+        double maiorTotal = calcularTotalVendedor(nomeVendedor[0]);
+
+        for (int i = 1; i < totalVendas; i++) {
+            double total = calcularTotalVendedor(nomeVendedor[i]);
+
+            if (total > maiorTotal) {
+                maiorTotal = total;
+                vendedorMelhor = nomeVendedor[i];
+            }
+        }
+
+        System.out.println("\n===== MELHOR VENDEDOR =====");
+        System.out.println("Vendedor: " + vendedorMelhor);
+        System.out.printf("Total vendido: R$ %.2f%n", maiorTotal);
+        System.out.println("===========================");
     }
 }
