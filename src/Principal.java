@@ -77,6 +77,7 @@ public class Principal {
         System.out.println("3 - Relatorio de comissoes");
         System.out.println("4 - Resumo do dia");
         System.out.println("5 - Vendedor destaque");
+        System.out.println("5 - Melhor vendedor do dia");
         System.out.println("0 - Sair");
         System.out.print("Escolha: ");
     }
