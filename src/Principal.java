@@ -98,6 +98,8 @@ public class Principal {
 
     // Dev 2
 
+    // percorre os vetores paralelos e soma o valor de todas as vendas
+    // realizadas pelo vendedor informado como parametro
     public static double calcularTotalVendedor(String vendedor) {
         double total = 0;
         for (int i=0;i < totalVendas; i++) {
