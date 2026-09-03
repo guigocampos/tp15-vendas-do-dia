@@ -81,9 +81,10 @@ public class Principal {
         System.out.print("Escolha: ");
     }
 
-    public static void exibirRodape() {
-        System.out.println("==============================");
-    }
+   public static void exibirRodape() {
+    System.out.println("=== Vendas do Dia - Relatorio gerado com sucesso ===");
+    System.out.println("Ate a proxima venda!");
+}
 
 
     //Dev 1
