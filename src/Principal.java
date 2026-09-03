@@ -99,17 +99,36 @@ public class Principal {
     // Dev 2
 
     public static double calcularTotalVendedor(String vendedor) {
-        return 0;
+        double total = 0;
+        for (int i=0;i < totalVendas; i++) {
+            if (nomeVendedor[i].equals(vendedor)) {
+                total += valorVenda[i];
+        }
     }
+    return total;
+}
 
     public static double calcularComissao(double totalVendido) {
-        return 0;
+        if (totalVendido < 0) {
+            return 0;
     }
+    return totalVendido * 0.05;
+}
 
     public static void relatorioComissoes() {
-
+        if (totalVendas == 0) {
+            System.out.println("Nenhuma venda registrada ainda.");
+            return;
     }
 
+    System.out.println("\n--- Relatorio de comissoes ---");
+    for (int i=0; i < totalVendas; i++) {
+        double total = calcularTotalVendedor(nomeVendedor[i]);
+        double comissao = calcularComissao(total);
+        System.out.printf("%s - Total vendido: R$ %.2f - Comissao: R$ %.2f%n",
+                nomeVendedor[i], total, comissao);
+    }
+}
     // Dev 3
 
     public static double calcularTotalDia() {
